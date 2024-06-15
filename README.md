@@ -22,11 +22,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ```
 
 ```sh
-brew install git
-brew install tree
-brew install vlc
-brew install iterm2
-brew install libreoffice
+# Apps
+brew install git vlc iterm2 tree libreoffice
 
 ```
 
@@ -57,40 +54,18 @@ cabal install pandoc
 ## SSH Key Generation
 
 ```sh
-ssh-keygen -t rsa -C "jsvine@gmail.com"
+ssh-keygen -t rsa -C "jromussi@gmail.com"
 ssh-add ~/.ssh/id_rsa
 ```
 
 - [Add SSH key to GitHub account](https://github.com/settings/ssh).
 
-## Python
-
-```sh
-brew install python
-brew install python3
-pip install readline
-pip install virtualenvwrapper
-```
-
-```sh
-# Add to ~/.bashrc
-export VIRTUALENVWRAPPER_PYTHON=`which python`
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
-```
-
-```sh
-# iPython, and iPython Notebook requirements
-pip install ipython
-pip install pyzmq
-pip install jinja2
-pip install tornado
-```
-
 ## Ruby
 
 ```sh
-brew install rbenv ruby-build
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+~/.rbenv/bin/rbenv init
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 ```
 
 ```sh
@@ -109,7 +84,12 @@ gem install bundle
 ## JavaScript / Node
 
 ```sh
-brew install node
+git clone https://github.com/nvm-sh/nvm.git ~/.nvm
+```
+
+```sh
+nvm install node # "node" is an alias for the latest version
+nvm use node
 ```
 
 ## Vim
@@ -124,33 +104,3 @@ git clone https://github.com/altercation/vim-colors-solarized.git
 git clone https://github.com/mikewest/vimroom.git
 git clone https://github.com/plasticboy/vim-markdown
 ```
-
-## Docker
-
-```sh
-brew cask install virtualbox
-brew install docker
-brew install boot2docker
-```
-
-## Haskell and Haskell-based programs
-
-
-```sh
-# Haskell and cabal
-brew install haskell-platform
-brew install cabal
-cabal update
-```
-
-```sh
-# Pandoc
-cabal install pandoc
-```
-
-
-## Misc.
-
-- [iTerm2 Color Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes)
-- [Caffeine](http://lightheadsw.com/caffeine/)
-- [Atom](https://atom.io/)
